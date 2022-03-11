@@ -1,0 +1,51 @@
+services:
+
+  talker:
+    build: .
+    networks:
+      rosnet1:
+      rosnet2:
+      rosnet3:
+      rosnet4:
+        ipv4_address: 172.76.0.20
+    command: ros2 run demo_nodes_cpp talker
+
+
+  listener1:
+    build: .
+    networks:
+      - rosnet1
+    command: ros2 run demo_nodes_cpp listener
+
+  listener2:
+    build: .
+    networks:
+      - rosnet2
+    command: ros2 run demo_nodes_cpp listener
+
+  listener3:
+    build: .
+    networks:
+      - rosnet3
+    command: ros2 run demo_nodes_cpp listener
+
+  listener4:
+    build: .
+    networks:
+      rosnet4:
+        ipv4_address: 172.76.0.22
+    command: ros2 run demo_nodes_cpp listener
+
+networks:
+  rosnet1:
+  rosnet2:
+  rosnet3:
+  rosnet4:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      - subnet: 172.76.0.0/24
+        gateway: 172.76.0.1
+  default:
+    driver: none

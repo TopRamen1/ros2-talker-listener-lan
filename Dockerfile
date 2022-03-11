@@ -1,6 +1,6 @@
-FROM ros:galactic-ros-core
+FROM ros:foxy-ros-base
+
+SHELL ["/bin/bash", "-c"]
 
 RUN apt-get update && apt-get install -y \
-    ros-${ROS_DISTRO}-demo-nodes-cpp && \
-    apt-get autoremove -y && \
-    rm -rf /var/lib/apt/lists/*
+    ros-${ROS_DISTRO}-demo-nodes-cpp
