@@ -1,7 +1,9 @@
 services:
 
   talker:
-    build: .
+    build:
+      context: ./
+      dockerfile: ./Dockerfile-Galactic
     networks:
       rosnet1:
       rosnet2:
@@ -12,25 +14,33 @@ services:
 
 
   listener1:
-    build: .
+    build:
+      context: ./
+      dockerfile: ./Dockerfile-Galactic
     networks:
       - rosnet1
     command: ros2 run demo_nodes_cpp listener
 
   listener2:
-    build: .
+    build:
+      context: ./
+      dockerfile: ./Dockerfile-Foxy
     networks:
       - rosnet2
     command: ros2 run demo_nodes_cpp listener
 
   listener3:
-    build: .
+    build:
+      context: ./
+      dockerfile: ./Dockerfile-Foxy
     networks:
       - rosnet3
     command: ros2 run demo_nodes_cpp listener
 
   listener4:
-    build: .
+    build:
+      context: ./
+      dockerfile: ./Dockerfile-Foxy
     networks:
       rosnet4:
         ipv4_address: 172.76.0.22
