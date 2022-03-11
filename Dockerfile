@@ -1,4 +1,4 @@
-FROM ros:galactic-ros-core
+FROM ros:foxy-ros-core
 
 RUN apt-get update && apt-get install -y \
     ros-${ROS_DISTRO}-demo-nodes-cpp && \
