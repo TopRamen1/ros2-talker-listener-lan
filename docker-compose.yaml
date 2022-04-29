@@ -1,6 +1,6 @@
 # Quick start:
 # $ docker compose -f compose.talker.yaml up
-
+version: "2.3"
 services:
   talker:
     build: .
