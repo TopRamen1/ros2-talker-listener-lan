@@ -3,7 +3,7 @@ services:
   talker:
     build:
       context: ./
-      dockerfile: ./Dockerfile-Galactic
+      dockerfile: ./Dockerfile-Humble
     networks:
       rosnet1:
       rosnet2:
@@ -16,7 +16,7 @@ services:
   listener1:
     build:
       context: ./
-      dockerfile: ./Dockerfile-Galactic
+      dockerfile: ./Dockerfile-Humble
     networks:
       - rosnet1
     command: ros2 run demo_nodes_cpp listener
