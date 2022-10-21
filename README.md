@@ -3,16 +3,8 @@ The simplest demo showing how to connect two ROS 2 machines in the same LAN
 
 ## Quick Start
 
-Connect two computers to the same LAN
-
-### 1st machine
+Launch to test if the distros /dds setups work together 
 
 ```
-docker compose -f compose.talker.yaml up
-```
-
-### 2nd machine
-
-```
-docker compose -f compose.listener.yaml up
+docker compose -f compose.yml up
 ```
